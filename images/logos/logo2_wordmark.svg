@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 195" width="600" height="195">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&amp;display=swap');
+  </style>
+  <defs>
+    <linearGradient id="l2wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C4A77D"/>
+      <stop offset="50%" stop-color="#2D5A4A"/>
+      <stop offset="100%" stop-color="#C4A77D"/>
+    </linearGradient>
+  </defs>
+
+  <!-- White background -->
+  <rect width="600" height="195" fill="#FFFFFF"/>
+
+  <text x="300" y="100" font-family="'Instrument Serif', Georgia, serif"
+        font-size="78" fill="#2D5A4A" text-anchor="middle"
+        font-style="italic" letter-spacing="3">Bayview</text>
+
+  <path d="M 80,125 Q 140,110 190,125 T 300,125 T 410,125 T 520,125"
+        stroke="url(#l2wave)" stroke-width="3" fill="none"
+        stroke-linecap="round"/>
+
+  <text x="300" y="165" font-family="'DM Sans', -apple-system, sans-serif"
+        font-size="20" fill="#3D7A64" text-anchor="middle"
+        letter-spacing="10" font-weight="500">SPECIALIST CLINIC</text>
+
+</svg>

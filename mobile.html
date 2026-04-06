@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bayview Specialist Clinic | Cleveland QLD</title>
+    <meta name="description" content="Expert psychiatric care in Cleveland QLD. Call (07) 3383 7550 to book.">
+
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-bg: #FAF9F7;
+            --color-bg-warm: #F5F3EF;
+            --color-text: #1a1a1a;
+            --color-text-muted: #5a5a5a;
+            --color-accent: #2D5A4A;
+            --color-accent-light: #3D7A64;
+            --color-accent-pale: #E8F0ED;
+            --color-warm: #C4A77D;
+            --color-warm-light: #E8DCC8;
+            --color-border: #E5E2DD;
+            --font-display: 'Instrument Serif', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            padding-bottom: 70px;
+        }
+
+        /* ========== HEADER ========== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(250, 249, 247, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--color-warm);
+        }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--color-text);
+            transition: 0.3s ease;
+        }
+
+        .menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ========== MOBILE MENU ========== */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 101;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s ease;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            max-width: 320px;
+            height: 100vh;
+            background: white;
+            z-index: 102;
+            padding: 80px 24px 40px;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 18px 0;
+            font-size: 1.2rem;
+            color: var(--color-text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu .menu-cta {
+            display: block;
+            background: var(--color-accent);
+            color: white;
+            text-align: center;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 24px;
+            font-weight: 600;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            padding: 90px 20px 40px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--color-accent-pale);
+            color: var(--color-accent);
+            padding: 8px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 em {
+            color: var(--color-accent);
+            font-style: italic;
+        }
+
+        .hero p {
+            color: var(--color-text-muted);
+            font-size: 1rem;
+            margin-bottom: 24px;
+        }
+
+        /* ========== STATS ========== */
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            padding: 0 20px 30px;
+        }
+
+        .stat {
+            background: white;
+            padding: 20px 16px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--color-accent);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            margin-top: 4px;
+        }
+
+        /* ========== CTA BUTTONS ========== */
+        .cta-buttons {
+            padding: 0 20px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--color-text);
+            border: 2px solid var(--color-border);
+        }
+
+        /* ========== SECTIONS ========== */
+        .section {
+            padding: 40px 20px;
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .section-warm {
+            background: var(--color-bg-warm);
+        }
+
+        .section-accent {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: var(--color-text-muted);
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .section-accent .section-subtitle {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .section-accent .section-label {
+            color: var(--color-warm);
+        }
+
+        /* ========== SERVICE CARDS ========== */
+        .services-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .service-card {
+            background: var(--color-bg);
+            padding: 24px;
+            border-radius: 12px;
+        }
+
+        .section-white .service-card {
+            background: var(--color-bg);
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .service-card p {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        .service-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--color-accent-pale);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-accent);
+            flex-shrink: 0;
+        }
+
+        /* ========== DOCTOR CARDS ========== */
+        .doctor-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .doctor-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .doctor-info {
+            padding: 24px;
+        }
+
+        .doctor-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            margin-bottom: 4px;
+        }
+
+        .doctor-info .credentials {
+            color: var(--color-accent);
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .doctor-info p {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .doctor-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .doctor-tag {
+            background: var(--color-accent-pale);
+            color: var(--color-accent);
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* ========== CONTACT INFO ========== */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+        }
+
+        .section-accent .contact-item {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-item small {
+            display: block;
+            opacity: 0.8;
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+
+        /* ========== MAP ========== */
+        .map-container {
+            border-radius: 16px;
+            overflow: hidden;
+            margin-top: 24px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 250px;
+            border: none;
+        }
+
+        /* ========== FORM ========== */
+        .booking-form {
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1.5px solid var(--color-border);
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            background: var(--color-bg);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            background: white;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--color-accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--color-text);
+            color: white;
+            padding: 40px 20px 100px;
+            text-align: center;
+        }
+
+        .footer .logo {
+            color: white;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .footer p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* ========== STICKY CALL BUTTON ========== */
+        .sticky-call {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--color-accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 18px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            z-index: 100;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+        }
+
+        .sticky-call svg {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        /* ========== TRUST BADGES ========== */
+        .trust-badges {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            padding: 30px 20px;
+            background: white;
+        }
+
+        .trust-badge {
+            text-align: center;
+            padding: 16px;
+        }
+
+        .trust-badge-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-accent-pale);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-accent);
+            margin: 0 auto 8px;
+        }
+
+        .trust-badge strong {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 2px;
+        }
+
+        .trust-badge span {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="#" class="logo">Bayview <span>Clinic</span></a>
+        <button class="menu-btn" id="menuBtn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="#services">Services</a>
+        <a href="#doctors">Our Doctors</a>
+        <a href="#referrers">For GPs</a>
+        <a href="#location">Location</a>
+        <a href="#booking" class="menu-cta">Book Appointment</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-badge">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Accepting new patients
+        </div>
+        <h1>Expert psychiatric care for <em>better</em> mental health</h1>
+        <p>Comprehensive psychiatric assessment and evidence-based treatment in Cleveland QLD.</p>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Years experience</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Specialist doctors</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">✓</div>
+            <div class="stat-label">Private billing</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">✓</div>
+            <div class="stat-label">Telehealth available</div>
+        </div>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="cta-buttons">
+        <a href="#booking" class="btn btn-primary">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            Request Appointment
+        </a>
+        <a href="tel:0733837550" class="btn btn-secondary">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            (07) 3383 7550
+        </a>
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="trust-badges">
+        <div class="trust-badge">
+            <div class="trust-badge-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <strong>FRANZCP</strong>
+            <span>Qualified Psychiatrist</span>
+        </div>
+        <div class="trust-badge">
+            <div class="trust-badge-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+            </div>
+            <strong>FRACGP</strong>
+            <span>Qualified GP</span>
+        </div>
+        <div class="trust-badge">
+            <div class="trust-badge-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <strong>Mon-Fri</strong>
+            <span>9am - 4pm</span>
+        </div>
+        <div class="trust-badge">
+            <div class="trust-badge-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <strong>Cleveland</strong>
+            <span>QLD 4163</span>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section id="services" class="section section-white">
+        <div class="section-label">Our Services</div>
+        <h2 class="section-title">What We Treat</h2>
+        <p class="section-subtitle">Evidence-based care for mental health conditions</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>
+                    <span class="service-icon">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </span>
+                    Psychiatric Assessment
+                </h3>
+                <p>Comprehensive evaluation with personalised treatment plans.</p>
+            </div>
+            <div class="service-card">
+                <h3>
+                    <span class="service-icon">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    </span>
+                    Depression & Anxiety
+                </h3>
+                <p>Specialist treatment for mood and anxiety disorders.</p>
+            </div>
+            <div class="service-card">
+                <h3>
+                    <span class="service-icon">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </span>
+                    ADHD Assessment
+                </h3>
+                <p>Comprehensive ADHD assessment for adults and adolescents.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors -->
+    <section id="doctors" class="section section-warm">
+        <div class="section-label">Our Team</div>
+        <h2 class="section-title">Meet Our Doctors</h2>
+        <p class="section-subtitle">Experienced specialists dedicated to your care</p>
+
+        <div class="doctor-card">
+            <img src="images/Headshots/IMG_7600.jpeg" alt="Dr. Charuni Gamage">
+            <div class="doctor-info">
+                <h3>Dr. Charuni Gamage</h3>
+                <div class="credentials">MBBS, MD (Psychiatry), FRANZCP</div>
+                <p>Consultant Psychiatrist with over 20 years of experience treating adults with psychiatric conditions.</p>
+                <div class="doctor-tags">
+                    <span class="doctor-tag">Psychiatrist</span>
+                    <span class="doctor-tag">20+ Years</span>
+                    <span class="doctor-tag">FRANZCP</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- For GPs -->
+    <section id="referrers" class="section section-white">
+        <div class="section-label">For Referrers</div>
+        <h2 class="section-title">Easy Referral Process</h2>
+        <p class="section-subtitle">We aim to see urgent referrals within one week</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>
+                    <span class="service-icon">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </span>
+                    Email Referral
+                </h3>
+                <p>referrals@bayviewspecialist.com.au</p>
+            </div>
+            <div class="service-card">
+                <h3>
+                    <span class="service-icon">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </span>
+                    Fax Referral
+                </h3>
+                <p>(07) 3392 7079</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking -->
+    <section id="booking" class="section section-accent">
+        <div class="section-label">Book Now</div>
+        <h2 class="section-title" style="color: white;">Request an Appointment</h2>
+        <p class="section-subtitle">We'll contact you within one business day</p>
+
+        <form class="booking-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="referral">Do you have a referral?</label>
+                <select id="referral" name="referral">
+                    <option value="yes">Yes, I have a referral</option>
+                    <option value="no">No, I need to get one</option>
+                    <option value="pending">My GP is sending it</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message (optional)</label>
+                <textarea id="message" name="message" placeholder="Brief reason for appointment"></textarea>
+            </div>
+            <button type="submit" class="form-submit">Submit Request</button>
+        </form>
+    </section>
+
+    <!-- Location -->
+    <section id="location" class="section section-warm">
+        <div class="section-label">Find Us</div>
+        <h2 class="section-title">Location</h2>
+        <p class="section-subtitle">Conveniently located in Cleveland</p>
+
+        <div class="contact-info" style="background: white; padding: 20px; border-radius: 12px;">
+            <div class="contact-item" style="background: var(--color-bg);">
+                <div class="contact-icon" style="background: var(--color-accent-pale); color: var(--color-accent);">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <div>
+                    <strong>Address</strong>
+                    <small>10/120 Bloomfield St, Cleveland QLD 4163</small>
+                </div>
+            </div>
+            <div class="contact-item" style="background: var(--color-bg);">
+                <div class="contact-icon" style="background: var(--color-accent-pale); color: var(--color-accent);">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <div>
+                    <strong>Hours</strong>
+                    <small>Monday – Friday: 9am – 4pm</small>
+                </div>
+            </div>
+            <div class="contact-item" style="background: var(--color-bg);">
+                <div class="contact-icon" style="background: var(--color-accent-pale); color: var(--color-accent);">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>
+                </div>
+                <div>
+                    <strong>Parking</strong>
+                    <small>Free on-site parking available</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3537.8876!2d153.2639!3d-27.5265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b915f48c8fa0001%3A0x502a35af3de9c80!2sCleveland%20QLD%204163!5e0!3m2!1sen!2sau!4v1706300000000!5m2!1sen!2sau"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="#" class="logo">Bayview <span>Clinic</span></a>
+        <p>Expert psychiatry and holistic health care in Cleveland QLD.</p>
+        <div class="footer-links">
+            <a href="tel:0733837550">(07) 3383 7550</a>
+            <a href="mailto:reception@bayviewspecialist.com.au">reception@bayviewspecialist.com.au</a>
+        </div>
+        <div class="footer-copy">© 2026 Bayview Specialist Clinic</div>
+    </footer>
+
+    <!-- Sticky Call Button -->
+    <a href="tel:0733837550" class="sticky-call">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        Call Now: (07) 3383 7550
+    </a>
+
+    <script>
+        // Mobile menu
+        const menuBtn = document.getElementById('menuBtn');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function toggleMenu() {
+            menuBtn.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMenu();
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
