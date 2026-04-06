@@ -417,6 +417,9 @@
         .contact-icon {
             width: 40px;
             height: 40px;
+            min-width: 40px;
+            min-height: 40px;
+            flex-shrink: 0;
             background: rgba(255,255,255,0.15);
             border-radius: 50%;
             display: flex;
@@ -1571,8 +1574,20 @@
             }
 
             .referral-method {
-                font-size: 0.85rem;
+                font-size: 0.8rem;
                 padding: 12px;
+            }
+
+            .referral-method-icon {
+                width: 30px;
+                height: 30px;
+                min-width: 30px;
+                flex-shrink: 0;
+            }
+
+            .referral-method-icon svg {
+                width: 14px;
+                height: 14px;
             }
 
             .booking-form-card {
@@ -2160,7 +2175,7 @@
 
     <!-- Back to Top Button -->
     <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>
+        <svg width="24" height="24" fill="none" stroke="white" stroke-width="3" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>
     </button>
 
     <!-- Sticky Mobile Call Button -->
