@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <title>Bayview Specialist Clinic | Expert Psychiatric Care Cleveland</title>
-    <meta name="description" content="Led by experienced Specialist Psychiatrists, Bayview Specialist Clinic offers expert psychiatric care in Cleveland QLD. Specialist treatment for mood disorders, anxiety, PTSD, and more.">
+    <meta name="description" content="Led by an experienced Specialist Psychiatrist, Bayview Specialist Clinic offers expert psychiatric care in Cleveland QLD. Specialist treatment for mood disorders, anxiety, PTSD, and more.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="images/WesbitePNG/favicon.svg">
@@ -15,15 +15,15 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bayviewspecialistclinic.com.au/">
-    <meta property="og:title" content="Bayview Specialist Clinic | Expert Psychiatry & Holistic Health Care">
-    <meta property="og:description" content="Led by experienced Specialist Psychiatrists, offering expert psychiatry, holistic GP services, and weight management programs in Cleveland QLD.">
+    <meta property="og:title" content="Bayview Specialist Clinic | Expert Psychiatric Care Cleveland">
+    <meta property="og:description" content="Led by an experienced Specialist Psychiatrist, Bayview Specialist Clinic offers expert psychiatric assessment and evidence-based treatment in Cleveland QLD.">
     <meta property="og:image" content="https://bayviewspecialistclinic.com.au/image.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://bayviewspecialistclinic.com.au/">
-    <meta name="twitter:title" content="Bayview Specialist Clinic | Expert Psychiatry & Holistic Health Care">
-    <meta name="twitter:description" content="Led by experienced Specialist Psychiatrists, offering expert psychiatry, holistic GP services, and weight management programs in Cleveland QLD.">
+    <meta name="twitter:title" content="Bayview Specialist Clinic | Expert Psychiatric Care Cleveland">
+    <meta name="twitter:description" content="Led by an experienced Specialist Psychiatrist, Bayview Specialist Clinic offers expert psychiatric assessment and evidence-based treatment in Cleveland QLD.">
     <meta name="twitter:image" content="https://bayviewspecialistclinic.com.au/image.png">
 
     <!-- Additional SEO -->
@@ -37,7 +37,7 @@
         "@context": "https://schema.org",
         "@type": "MedicalBusiness",
         "name": "Bayview Specialist Clinic",
-        "description": "Expert psychiatry and holistic GP services in Cleveland QLD",
+        "description": "Expert psychiatric care in Cleveland QLD",
         "url": "https://bayviewspecialistclinic.com.au",
         "telephone": "+61733837550",
         "email": "reception@bayviewspecialistclinic.com.au",
@@ -67,7 +67,7 @@
                 "name": "Dr. Charuni Gamage",
                 "jobTitle": "Consultant Psychiatrist",
                 "medicalSpecialty": "Psychiatry"
-            },
+            }
         ]
     }
     </script>
@@ -462,7 +462,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
 
@@ -528,6 +528,7 @@
             color: var(--color-text-muted);
             margin-bottom: 16px;
             font-size: 1.05rem;
+            max-width: 540px;
         }
 
         .credentials-list {
@@ -709,6 +710,10 @@
             opacity: 0.9;
         }
 
+        .booking-info-item svg {
+            flex-shrink: 0;
+        }
+
         .booking-form-card {
             background: white;
             border-radius: 16px;
@@ -880,6 +885,8 @@
             font-size: 0.95rem;
             margin-bottom: 12px;
             transition: var(--transition);
+            overflow-wrap: break-word;
+            word-break: break-all;
         }
 
         .footer-col a:hover {
@@ -921,6 +928,10 @@
                 gap: 48px;
             }
 
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .hero-visual {
                 order: -1;
             }
@@ -933,6 +944,10 @@
         @media (max-width: 768px) {
             .mobile-menu-btn {
                 display: block;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
             }
 
             .contact-strip-inner {
@@ -1487,14 +1502,9 @@
                 padding: 14px 24px;
             }
 
-            /* Improve tap targets for phone links */
-            a[href^="tel:"] {
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
+            /* Improve tap targets for phone links (only hero buttons) */
+            .hero-actions a[href^="tel:"] {
                 padding: 8px 0;
-                font-size: 1.1rem;
-                font-weight: 600;
             }
 
             /* Better readable font sizes */
@@ -1620,11 +1630,6 @@
                 right: 16px;
             }
 
-            .back-to-top svg {
-                width: 20px;
-                height: 20px;
-                stroke-width: 3;
-            }
 
             /* Trust badges in 2x2 grid on mobile */
             .trust-badges-inner {
@@ -1714,10 +1719,10 @@
             <a href="#" class="logo">Bayview <span>Specialist Clinic</span></a>
             <nav id="nav">
                 <a href="#services">Services</a>
-                <a href="#about">Our Doctors</a>
+                <a href="#about">Our Doctor</a>
                 <a href="#referrers">For GPs</a>
                 <a href="#location">Location</a>
-                <a href="#booking" class="nav-cta">Book Appointment</a>
+                <a href="tel:0733837550" class="nav-cta">Call to Book</a>
             </nav>
             <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">
                 <span></span>
@@ -1738,15 +1743,15 @@
                         Accepting new patients
                     </div>
                     <h1>Expert psychiatric care for <em>better</em> mental health</h1>
-                    <p>Led by experienced Specialist Psychiatrists, Bayview Specialist Clinic provides comprehensive psychiatric assessment and evidence-based treatment in Cleveland.</p>
+                    <p>Led by an experienced Specialist Psychiatrist, Bayview Specialist Clinic provides comprehensive psychiatric assessment and evidence-based treatment in Cleveland.</p>
                     <div class="hero-actions">
-                        <a href="#booking" class="btn btn-primary">
-                            Request Appointment
-                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </a>
-                        <a href="tel:0733837550" class="btn btn-secondary">
+                        <a href="tel:0733837550" class="btn btn-primary">
+                            Call to Book
                             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                            (07) 3383 7550
+                        </a>
+                        <a href="#services" class="btn btn-secondary">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+                            Our Services
                         </a>
                     </div>
                 </div>
@@ -1758,8 +1763,8 @@
                                 <div class="stat-label">Years experience</div>
                             </div>
                             <div class="stat">
-                                <div class="stat-number">2</div>
-                                <div class="stat-label">Specialist doctors</div>
+                                <div class="stat-number">✓</div>
+                                <div class="stat-label">FRANZCP Qualified</div>
                             </div>
                             <div class="stat">
                                 <div class="stat-number">✓</div>
@@ -2029,11 +2034,15 @@
     <!-- Booking -->
     <section id="booking" class="booking">
         <div class="container">
-            <div class="booking-inner reveal">
-                <div class="booking-text">
-                    <h2>Request an Appointment</h2>
-                    <p>Complete the form and our reception team will contact you within one business day to confirm your appointment. Please have your referral ready.</p>
-                    <div class="booking-info">
+            <div class="booking-inner reveal" style="grid-template-columns: 1fr; max-width: 700px; margin: 0 auto; text-align: center;">
+                <div class="booking-text" style="display: flex; flex-direction: column; align-items: center;">
+                    <h2>Book an Appointment</h2>
+                    <p>Call our reception team to schedule your appointment. Please have your GP referral ready when you call.</p>
+                    <a href="tel:0733837550" class="btn" style="background: white; color: var(--color-accent); font-size: 1.25rem; padding: 18px 36px; margin: 24px auto 40px; display: inline-flex;">
+                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        (07) 3383 7550
+                    </a>
+                    <div class="booking-info" style="display: flex; flex-direction: column; text-align: left;">
                         <div class="booking-info-item">
                             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                             Valid GP or specialist referral required
@@ -2051,66 +2060,6 @@
                             Telehealth available for follow-up consultations
                         </div>
                     </div>
-                </div>
-                <div class="booking-form-card">
-                    <h3>Appointment Request</h3>
-                    <!-- Success message (shown after form submission) -->
-                    <div id="form-success" class="form-success">
-                        <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-bottom: 12px;"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <h4 style="margin-bottom: 8px;">Thank you for your request!</h4>
-                        <p>Our team will contact you within one business day to confirm your appointment.</p>
-                    </div>
-                    <!-- Netlify Forms - add data-netlify="true" and netlify-honeypot for spam protection -->
-                    <!-- FORMSPREE SETUP: Replace YOUR_FORM_ID with your actual Formspree form ID -->
-                    <!-- Get your free form ID at: https://formspree.io/forms -->
-                    <form id="booking-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" aria-label="Appointment request form">
-                        <!-- Honeypot field - hidden from humans, catches bots -->
-                        <input type="text" name="_gotcha" class="ohnohoney" tabindex="-1" autocomplete="off">
-                        <!-- Redirect back to your site after submission -->
-                        <input type="hidden" name="_next" value="https://bayviewspecialistclinic.com.au/#booking">
-                        <!-- Email subject line -->
-                        <input type="hidden" name="_subject" value="New Appointment Request - Bayview Specialist Clinic">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="first-name">First Name *</label>
-                                <input type="text" id="first-name" name="first-name" required autocomplete="given-name" placeholder=" " minlength="2">
-                                <span class="form-error">Please enter your first name</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="last-name">Last Name *</label>
-                                <input type="text" id="last-name" name="last-name" required autocomplete="family-name" placeholder=" " minlength="2">
-                                <span class="form-error">Please enter your last name</span>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Phone *</label>
-                                <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder=" " pattern="[0-9\s\+\-\(\)]{8,}">
-                                <span class="form-error">Please enter a valid phone number</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required autocomplete="email" placeholder=" ">
-                                <span class="form-error">Please enter a valid email address</span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="referral">Do you have a referral?</label>
-                            <select id="referral" name="referral" aria-describedby="referral-help">
-                                <option value="yes">Yes, I have a referral</option>
-                                <option value="no">No, I need to get one</option>
-                                <option value="pending">My GP is sending it</option>
-                            </select>
-                            <small id="referral-help" style="color: var(--color-text-muted); font-size: 0.8rem;">A GP referral is required for Medicare rebates</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Brief reason for appointment</label>
-                            <textarea id="message" name="message" placeholder="Optional - helps us prepare for your appointment" maxlength="1000"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
-                            <span class="btn-text">Submit Request</span>
-                        </button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -2174,9 +2123,7 @@
     </main>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-        <svg width="24" height="24" fill="none" stroke="white" stroke-width="3" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>
-    </button>
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top" style="font-size: 1.5rem; color: white; line-height: 1;">&#9650;</button>
 
     <!-- Sticky Mobile Call Button -->
     <a href="tel:0733837550" class="mobile-call-btn" aria-label="Call us now">
@@ -2190,19 +2137,19 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#" class="logo">Bayview <span>Specialist Clinic</span></a>
-                    <p>Expert psychiatric care in Cleveland. Led by experienced Specialist Psychiatrists, providing specialist assessment and treatment for adults.</p>
+                    <p>Expert psychiatric care in Cleveland. Led by an experienced Specialist Psychiatrist, providing specialist assessment and treatment for adults.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <a href="#services">Services</a>
                     <a href="#about">Dr. Charuni Gamage</a>
-                    <a href="#booking">Book Appointment</a>
+                    <a href="tel:0733837550">Call to Book</a>
                     <a href="#location">Location</a>
                 </div>
                 <div class="footer-col">
                     <h4>For Referrers</h4>
                     <a href="#referrers">Referral Information</a>
-                    <a href="#">Download Referral Form</a>
+                    <a href="mailto:reception@bayviewspecialistclinic.com.au?subject=Referral">Send Referral</a>
                     <a href="mailto:reception@bayviewspecialistclinic.com.au">Email Referral</a>
                 </div>
                 <div class="footer-col">
@@ -2252,11 +2199,22 @@
         const mobileOverlay = document.getElementById('mobile-overlay');
         const navMenu = document.getElementById('nav');
 
+        function closeMenu() {
+            navMenu.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
         function toggleMenu() {
-            navMenu.classList.toggle('active');
-            mobileMenuBtn.classList.toggle('active');
-            mobileOverlay.classList.toggle('active');
-            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            if (navMenu.classList.contains('active')) {
+                closeMenu();
+            } else {
+                navMenu.classList.add('active');
+                mobileMenuBtn.classList.add('active');
+                mobileOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
         }
 
         // Close menu when clicking overlay
@@ -2295,67 +2253,17 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
+                    closeMenu();
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    // Close mobile menu if open
-                    document.getElementById('nav').classList.remove('active');
                 }
             });
         });
 
-        // Form handling for Formspree
-        const form = document.getElementById('booking-form');
-        const formSuccess = document.getElementById('form-success');
-        const submitBtn = document.getElementById('submit-btn');
-
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            // Basic client-side validation
-            if (!form.checkValidity()) {
-                form.reportValidity();
-                return;
-            }
-
-            // Show loading state
-            submitBtn.classList.add('btn-loading');
-            submitBtn.querySelector('.btn-text').textContent = 'Sending...';
-
-            try {
-                const formData = new FormData(form);
-
-                // Submit to Formspree
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    // Show success message
-                    form.style.display = 'none';
-                    formSuccess.classList.add('show');
-                    form.reset();
-                } else {
-                    const data = await response.json();
-                    throw new Error(data.error || 'Form submission failed');
-                }
-            } catch (error) {
-                // Show error message
-                alert('Sorry, there was an error submitting your request. Please try calling us directly at (07) 3383 7550.');
-                console.error('Form submission error:', error);
-            } finally {
-                // Reset button state
-                submitBtn.classList.remove('btn-loading');
-                submitBtn.querySelector('.btn-text').textContent = 'Submit Request';
-            }
-        });
 
         // Keyboard accessibility - close mobile menu with Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                document.getElementById('nav').classList.remove('active');
+                closeMenu();
             }
         });
 
