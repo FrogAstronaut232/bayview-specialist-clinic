@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <title>Bayview Specialist Clinic | Expert Psychiatric Care Cleveland</title>
-    <meta name="description" content="Led by an experienced Specialist Psychiatrist, Bayview Specialist Clinic offers expert psychiatric care in Cleveland QLD. Specialist treatment for mood disorders, anxiety, PTSD, and more.">
+    <meta name="description" content="Led by experienced Specialist Psychiatrists, Bayview Specialist Clinic offers expert psychiatric care in Cleveland QLD. Specialist treatment for mood disorders, anxiety, PTSD, and more.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="images/WesbitePNG/favicon.svg">
@@ -16,14 +16,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bayviewspecialistclinic.com.au/">
     <meta property="og:title" content="Bayview Specialist Clinic | Expert Psychiatric Care Cleveland">
-    <meta property="og:description" content="Led by an experienced Specialist Psychiatrist, Bayview Specialist Clinic offers expert psychiatric assessment and evidence-based treatment in Cleveland QLD.">
+    <meta property="og:description" content="Led by experienced Specialist Psychiatrists, Bayview Specialist Clinic offers expert psychiatric assessment and evidence-based treatment in Cleveland QLD.">
     <meta property="og:image" content="https://bayviewspecialistclinic.com.au/image.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://bayviewspecialistclinic.com.au/">
     <meta name="twitter:title" content="Bayview Specialist Clinic | Expert Psychiatric Care Cleveland">
-    <meta name="twitter:description" content="Led by an experienced Specialist Psychiatrist, Bayview Specialist Clinic offers expert psychiatric assessment and evidence-based treatment in Cleveland QLD.">
+    <meta name="twitter:description" content="Led by experienced Specialist Psychiatrists, Bayview Specialist Clinic offers expert psychiatric assessment and evidence-based treatment in Cleveland QLD.">
     <meta name="twitter:image" content="https://bayviewspecialistclinic.com.au/image.png">
 
     <!-- Additional SEO -->
@@ -56,7 +56,7 @@
         },
         "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "dayOfWeek": ["Monday", "Wednesday", "Friday"],
             "opens": "09:00",
             "closes": "16:00"
         },
@@ -66,6 +66,12 @@
                 "@type": "Physician",
                 "name": "Dr. Charuni Gamage",
                 "jobTitle": "Consultant Psychiatrist",
+                "medicalSpecialty": "Psychiatry"
+            },
+            {
+                "@type": "Physician",
+                "name": "Dr. Dan Miller",
+                "jobTitle": "General Psychiatrist",
                 "medicalSpecialty": "Psychiatry"
             }
         ]
@@ -592,6 +598,54 @@
             padding: 40px;
         }
 
+        .about .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .about .section-header .section-label {
+            display: inline-block;
+        }
+
+        .about-grid + .about-grid {
+            margin-top: 80px;
+        }
+
+        .about-grid.reversed {
+            grid-template-columns: 1.2fr 1fr;
+        }
+
+        .about-grid.reversed .about-image {
+            order: -1;
+        }
+
+        .areas-of-interest {
+            margin-top: 24px;
+        }
+
+        .areas-of-interest h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--color-text);
+        }
+
+        .areas-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .area-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            background: var(--color-accent-pale);
+            color: var(--color-accent);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
         /* Referrers */
         .referrers {
             padding: 100px 0;
@@ -921,11 +975,16 @@
         @media (max-width: 968px) {
             .hero-content,
             .about-grid,
+            .about-grid.reversed,
             .referrers-content,
             .booking-inner,
             .location-grid {
                 grid-template-columns: 1fr;
                 gap: 48px;
+            }
+
+            .about-grid.reversed .about-image {
+                order: 0;
             }
 
             .services-grid {
@@ -1719,7 +1778,7 @@
             <a href="#" class="logo">Bayview <span>Specialist Clinic</span></a>
             <nav id="nav">
                 <a href="#services">Services</a>
-                <a href="#about">Our Doctor</a>
+                <a href="#about">Our Team</a>
                 <a href="#referrers">For GPs</a>
                 <a href="#location">Location</a>
                 <a href="tel:0733837550" class="nav-cta">Call to Book</a>
@@ -1743,7 +1802,7 @@
                         Accepting new patients
                     </div>
                     <h1>Expert psychiatric care for <em>better</em> mental health</h1>
-                    <p>Led by an experienced Specialist Psychiatrist, Bayview Specialist Clinic provides comprehensive psychiatric assessment and evidence-based treatment in Cleveland.</p>
+                    <p>Led by experienced Specialist Psychiatrists, Bayview Specialist Clinic provides comprehensive psychiatric assessment and evidence based treatment in Cleveland.</p>
                     <div class="hero-actions">
                         <a href="tel:0733837550" class="btn btn-primary">
                             Call to Book
@@ -1809,7 +1868,7 @@
                     </div>
                     <div>
                         <span>Hours:</span>
-                        <strong>Mon–Fri 9:00am – 4:00pm</strong>
+                        <strong>Mon, Wed, Fri 9:00am – 4:00pm</strong>
                     </div>
                 </div>
             </div>
@@ -1866,7 +1925,7 @@
             <div class="section-header reveal">
                 <div class="section-label">Our Services</div>
                 <h2 class="section-title">Comprehensive psychiatric assessment and treatment</h2>
-                <p class="section-subtitle">Evidence-based care for a wide range of mental health conditions</p>
+                <p class="section-subtitle">Evidence based care for a wide range of mental health conditions</p>
             </div>
             <div class="services-grid stagger-children">
                 <div class="service-card">
@@ -1881,28 +1940,28 @@
                         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
                     </div>
                     <h3>Depression & Anxiety</h3>
-                    <p>Specialist treatment for mood disorders, generalised anxiety, panic disorder, social anxiety, and treatment-resistant cases.</p>
+                    <p>Specialist treatment for mood disorders, generalised anxiety, panic disorder, social anxiety, and treatment resistant cases.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </div>
-                    <h3>ADHD Assessment</h3>
-                    <p>Comprehensive ADHD assessment for adults and adolescents, including diagnostic evaluation and medication management.</p>
+                    <h3>PTSD & Trauma</h3>
+                    <p>Assessment and treatment of post traumatic stress disorder and complex trauma, with tailored approaches to support recovery and resilience.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
                     </div>
                     <h3>Bipolar Disorder</h3>
-                    <p>Diagnosis and long-term management of bipolar spectrum disorders with mood stabilisation and relapse prevention.</p>
+                    <p>Diagnosis and long term management of bipolar spectrum disorders with mood stabilisation and relapse prevention.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
                     </div>
                     <h3>Psychotherapy</h3>
-                    <p>Evidence-based psychological therapies including CBT, supportive psychotherapy, and integrated treatment approaches.</p>
+                    <p>Evidence based psychological therapies including CBT, supportive psychotherapy, and integrated treatment approaches.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -1915,16 +1974,22 @@
         </div>
     </section>
 
-    <!-- About / Lead Psychiatrist -->
+    <!-- Our Team -->
     <section id="about" class="about">
         <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">Our Psychiatrists</div>
+                <h2 class="section-title">Meet the Team</h2>
+            </div>
+
+            <!-- Dr. Charuni Gamage -->
             <div class="about-grid reveal">
                 <div class="about-content">
                     <div class="section-label">Consultant Psychiatrist</div>
                     <h2>Dr. Charuni Gamage</h2>
                     <p style="font-size: 1.1rem; color: var(--color-accent); margin-bottom: 16px; font-weight: 500;">MBBS, MD (Psychiatry), FRANZCP</p>
                     <p>Dr. Charuni Gamage is a Consultant Psychiatrist at Bayview Specialist Clinic. With over 20 years of experience treating adults with a wide range of psychiatric conditions both domestically and internationally, she brings exceptional expertise and compassionate care to every patient.</p>
-                    <p>Her approach integrates biological, psychological, and social perspectives in assessment, combining evidence-based pharmacological treatment with Cognitive Behaviour Therapy and other psychotherapies when appropriate. Dr. Gamage is committed to patient-centred care, ensuring each individual receives a tailored treatment plan.</p>
+                    <p>Her approach integrates biological, psychological, and social perspectives in assessment, combining evidence based pharmacological treatment with Cognitive Behaviour Therapy and other psychotherapies when appropriate. Dr. Gamage is committed to patient centred care, ensuring each individual receives a tailored treatment plan.</p>
 
                     <div class="credentials-list">
                         <div class="credential">
@@ -1960,6 +2025,35 @@
                     <img src="images/Headshots/IMG_7600.jpeg" alt="Dr. Charuni Gamage" loading="lazy" style="width: 100%; border-radius: 16px; object-fit: cover; aspect-ratio: 4/5;">
                 </div>
             </div>
+
+            <!-- Dr. Dan Miller -->
+            <div class="about-grid reversed reveal">
+                <div class="about-content">
+                    <div class="section-label">General Psychiatrist</div>
+                    <h2>Dr. Dan Miller</h2>
+                    <p>Dan is a General Psychiatrist with over a decade of experience working across acute, emergency and community mental health services, including regional and culturally diverse settings.</p>
+                    <p>Dan works with adults who might be experiencing burnout, chronic stress, and a range of mood and anxiety disorders. Many people he sees are managing work, family, or other responsibilities while experiencing persistent tension, difficulty switching off, or feeling overwhelmed.</p>
+                    <p>His approach is practical and individualised. Dan combines comprehensive assessment with appropriate use of medication and psychologically informed strategies. He focuses on understanding contributing factors over time, including life circumstances and stressors, to guide effective management.</p>
+                    <p>He has a particular interest in working with people who may delay seeking support until difficulties become more persistent and entrenched.</p>
+
+                    <div class="areas-of-interest">
+                        <h4>Areas of Interest</h4>
+                        <div class="areas-list">
+                            <span class="area-tag">Burnout & Chronic Stress</span>
+                            <span class="area-tag">Depression</span>
+                            <span class="area-tag">Bipolar Disorder</span>
+                            <span class="area-tag">Generalised Anxiety</span>
+                            <span class="area-tag">OCD</span>
+                            <span class="area-tag">Emotional Regulation</span>
+                            <span class="area-tag">Complex PTSD</span>
+                            <span class="area-tag">Psychotic Disorders</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/Headshots/image000002.jpeg" alt="Dr. Dan Miller" loading="lazy" style="width: 100%; border-radius: 16px; object-fit: cover; aspect-ratio: 4/5;">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1975,7 +2069,7 @@
             <div class="referrers-content reveal">
                 <div class="referral-box">
                     <h3>How to Refer</h3>
-                    <p>We accept referrals from GPs and other specialists. A standard referral letter is sufficient — no specific form required.</p>
+                    <p>We accept referrals from GPs and other specialists. A standard referral letter is sufficient, no specific form required.</p>
                     <div class="referral-methods">
                         <div class="referral-method">
                             <div class="referral-method-icon">
@@ -2088,7 +2182,7 @@
                             </div>
                             <div class="location-item-text">
                                 <strong>Opening Hours</strong>
-                                <span>Monday – Friday: 9:00am – 4:00pm<br>Saturday – Sunday: Closed</span>
+                                <span>Monday, Wednesday, Friday: 9:00am – 4:00pm<br>Tuesday, Thursday, Weekends: Closed</span>
                             </div>
                         </div>
                         <div class="location-item">
@@ -2137,12 +2231,12 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#" class="logo">Bayview <span>Specialist Clinic</span></a>
-                    <p>Expert psychiatric care in Cleveland. Led by an experienced Specialist Psychiatrist, providing specialist assessment and treatment for adults.</p>
+                    <p>Expert psychiatric care in Cleveland. Led by experienced Specialist Psychiatrists, providing specialist assessment and treatment for adults.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <a href="#services">Services</a>
-                    <a href="#about">Dr. Charuni Gamage</a>
+                    <a href="#about">Our Team</a>
                     <a href="tel:0733837550">Call to Book</a>
                     <a href="#location">Location</a>
                 </div>
